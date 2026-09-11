@@ -12,27 +12,29 @@ class _LatSwitchState extends State<LatSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Switch(
-          // Nilai bool ini akan mengaktifkan switch
-          value: _isSwitchOn,
-          activeColor: Colors.blue,
-          onChanged: (bool value) {
-            // Di bawah ini akan terpanggil ketika user mengaktifkan switch
-            setState(() {
-              _isSwitchOn = value;
-            });
-          },
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Text(
-          'Status Switch: ${_isSwitchOn ? 'Aktif' : 'Nonaktif'}',
-        ),
-      ],
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Switch(
+            // Nilai bool ini akan mengaktifkan switch
+            value: _isSwitchOn,
+            activeColor: Colors.blue,
+            onChanged: (bool value) {
+              // Di bawah ini akan terpanggil ketika user mengaktifkan switch
+              setState(() {
+                _isSwitchOn = value;
+              });
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Status Switch: ${_isSwitchOn ? 'Aktif' : 'Nonaktif'}',
+          ),
+        ],
+      ),
     );
   }
 }
